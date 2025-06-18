@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Verifying your browser...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 100px 20px;
+      background: #f8f8f8;
+      color: #333;
+    }
+  </style>
+  <script>
+    if (navigator.webdriver || /Headless/i.test(navigator.userAgent)) {
+      document.body.innerHTML = "<h1>Bot detected. Access denied.</h1>";
+      throw new Error("Bot blocked");
+    } else {
+      setTimeout(function() {
+        window.location.href = "prelander.html";
+      }, 3000);
+    }
+  </script>
+</head>
+<body>
+  <h2>Verifying your browser...</h2>
+  <p>Please wait while we check your connection.</p>
+</body>
+</html>
